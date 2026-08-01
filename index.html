@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CountIt">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#FF6B35">
+    <meta name="description" content="Conta drink e sfida i tuoi amici!">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B35'/><text y='.75em' x='.15em' font-size='70'>🍻</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <title>CountIt - Conta Drink & Competi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>🍻 CountIt</h1>
+            <p class="subtitle">Conta, competi, condividi!</p>
+        </header>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-value" id="totalCount">0</div>
+                <div class="stat-label">Totale</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="streak">0</div>
+                <div class="stat-label">Giorni</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="rank">-</div>
+                <div class="stat-label">Rank</div>
+            </div>
+        </div>
+
+        <div class="categories">
+            <h2>Categorie</h2>
+            <div class="category-list" id="categoryList">
+                <button class="cat-btn active" data-cat="drink">🍺 Drink</button>
+                <button class="cat-btn" data-cat="coffee">☕ Caffè</button>
+                <button class="cat-btn" data-cat="water">💧 Acqua</button>
+                <button class="cat-btn" data-cat="pizza">🍕 Pizza</button>
+                <button class="cat-btn" data-cat="shots">🥃 Shots</button>
+                <button class="cat-btn" data-cat="beer">🍻 Birre</button>
+            </div>
+        </div>
+
+        <div class="counter-section">
+            <h2 id="currentCategoryName">🍺 Drink</h2>
+            <div class="counter">
+                <button class="btn-circle minus" id="decrementBtn">−</button>
+                <div class="count-display">
+                    <span class="count-number" id="counterValue">0</span>
+                </div>
+                <button class="btn-circle plus" id="incrementBtn">+</button>
+            </div>
+            <div class="quick-buttons">
+                <button class="quick-btn" data-amount="1">+1</button>
+                <button class="quick-btn" data-amount="3">+3</button>
+                <button class="quick-btn" data-amount="5">+5</button>
+                <button class="quick-btn" data-amount="10">+10</button>
+            </div>
+        </div>
+
+        <div class="photo-section">
+            <h2>📸 Foto</h2>
+            <input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none">
+            <button class="photo-btn" id="takePhotoBtn">📷 Scatta Foto</button>
+            <div class="photo-grid" id="photoGrid"></div>
+        </div>
+
+        <div class="friends-section">
+            <h2>🏆 Classifica Amici</h2>
+            <div class="add-friend">
+                <input type="text" id="friendName" placeholder="Nome amico" maxlength="20">
+                <button id="addFriendBtn">Aggiungi</button>
+            </div>
+            <div class="leaderboard" id="leaderboard">
+                <p class="empty-msg">Nessun amico in classifica</p>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h2>📋 Cronologia</h2>
+            <div class="history-list" id="historyList">
+                <p class="empty-msg">Nessuna attività</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
